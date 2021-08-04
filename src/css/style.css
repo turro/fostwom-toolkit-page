@@ -85,7 +85,7 @@ p {
     align-content: center;
     display: grid;
     grid-template-columns: 4fr 3fr;
-    min-height: 100vh;
+    min-height: 50rem;
     gap: 0 16px;
 }
 .landing__link__container {
@@ -174,11 +174,14 @@ p {
     display: grid;
     min-height: 100vh;
 }
-
 .checks__row {
     display: grid;
     grid-template-columns: 1fr 2fr;
     gap: 0 32px;
+}
+
+.question__item {
+    cursor: pointer;
 }
 
 .clipPath {

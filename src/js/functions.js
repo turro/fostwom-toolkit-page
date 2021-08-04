@@ -6,22 +6,21 @@ questions.forEach(q => {
     const item = document.createElement("p");
     q.question_parent.appendChild(item)
 
-    item.className = "question";
+    item.className = "question__item";
     item.innerHTML = q.question;
     item._data = q;
 
     item.addEventListener('click', function() {
         const answer_item = document.createElement("p");
-        answer_item.className = "answer";
+        answer_item.className = "answer__item";
         answer_item.innerHTML = this._data.answer;
         
         // const answer = this._data.answer;
         const child = q.answer_parent.lastElementChild;
         if (child) {
             if (child.innerHTML != answer_item.innerHTML) {
-                //child.classList.add("hide")
                 q.answer_parent.removeChild(child);
-                //removeItem(child, trans_time)
+
                 appendItem(answer_item, q.answer_parent, trans_time)
             }
         }
@@ -34,7 +33,7 @@ questions.forEach(q => {
 function appendItem(item, parent_item, seconds) {
     const ms = seconds * 1000;
     item.style.transition = "opacity " + ms + "ms ease";
-
+    
     item.style.opacity = 0;
     parent_item.appendChild(item)
     setTimeout(function() {
